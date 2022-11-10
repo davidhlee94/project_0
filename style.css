@@ -1,7 +1,10 @@
 * {
     background-color:tan;
+    text-align: center;
 }
-.tamagotchi {
+
+#pet-picture {
     width: 150px;
     height: auto;
 }
+
