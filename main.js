@@ -13,6 +13,29 @@ const lightBtn = document.querySelector('.light')
 const playBtn = document.querySelector('.play')
 
 
+//Constants for function of buttons
+const decreaseHunger = () => {
+    if(myPetStart.hungerStart > 0 && myPetStart.hungerStart < 10){
+    myPetStart.hungerStart -= 1;
+    hungerStat.textContent = "Hunger: " + myPetStart.hungerStart;
+    }
+}
+
+const decreaseSleepy = () => {
+    if(myPetStart.sleepinessStart > 0 && myPetStart.sleepinessStart < 10){
+    myPetStart.sleepinessStart -= 1;
+    sleepinessStat.textContent = "Sleepiness: " + myPetStart.sleepinessStart;
+    }
+}
+
+const decreaseBoredom = () => {
+    if(myPetStart.boredomStart > 0 && myPetStart.boredomStart < 10){
+    myPetStart.boredomStart -= 1;
+    boredomStat.textContent = "Boredom: " + myPetStart.boredomStart;
+    }
+}
+
+
 //Tamagotchi's name
 const nameBtn = document.querySelector('#name-btn');
 console.log(nameBtn);
@@ -33,7 +56,7 @@ const myPetStart = {
     ageStart: 1
 }
 
-const intervalInscreaseStats = setInterval(increaseStats, 500)
+const intervalInscreaseStats = setInterval(increaseStats, 1500)
 //Incrementing the stats every second.
 function increaseStats() {
     if (myPetStart.hungerStart < 10 || myPetStart.sleepinessStart < 10 || myPetStart.boredomStart < 10){
@@ -54,41 +77,11 @@ function increaseStats() {
 };
 
 
-
-
-const decreaseHunger = () => {
-    if(myPetStart.hungerStart > 0 && myPetStart.hungerStart < 10){
-    myPetStart.hungerStart -= 1;
-    hungerStat.textContent = "Hunger: " + myPetStart.hungerStart;
-    }
-}
+//Runnning event listener for buttons
 feedBtn.addEventListener('click', decreaseHunger);
-
-
-const decreaseSleepy = () => {
-    if(myPetStart.sleepinessStart > 0 && myPetStart.sleepinessStart < 10){
-    myPetStart.sleepinessStart -= 1;
-    sleepinessStat.textContent = "Sleepiness: " + myPetStart.sleepinessStart;
-    }
-}
 lightBtn.addEventListener('click', decreaseSleepy);
-
-
-const decreaseBoredom = () => {
-    if(myPetStart.boredomStart > 0 && myPetStart.boredomStart < 10){
-    myPetStart.boredomStart -= 1;
-    boredomStat.textContent = "Boredom: " + myPetStart.boredomStart;
-    }
-}
 playBtn.addEventListener('click', decreaseBoredom);
 
-// const hungerIncrease = setInterval( function () {
-//     increaseHunger(); {
-//         if(hungerStart < 10){
-//             hungerStart++;
-//             myPetStart.hungerStat.innerText = hungerStart;
-//         } else alert("Your TamaGucci died from hunger.")
-//     }
-// }, 5000);
+
 
 
