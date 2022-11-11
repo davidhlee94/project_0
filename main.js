@@ -45,36 +45,45 @@ function increaseStats() {
     sleepinessStat.textContent = "Sleepiness: " + myPetStart.sleepinessStart;
     boredomStat.textContent = "Boredom: " + myPetStart.boredomStart;
     ageStat.textContent = "Age: " + myPetStart.ageStart;
-    } else {
-        alert("You killed your TamaGucci. RIP.");
-        clearInterval(intervalInscreaseStats);
-    }
+    } else  
+    // (myPetStart.hungerStart === 10 || myPetStart.sleepinessStart === 10 ||myPetStart.boredomStart === 10)
+    {
+            alert("You killed your TamaGucci. RIP.");
+            clearInterval(intervalInscreaseStats);
 }
+};
+
+
 
 
 
 
 
 const decreaseHunger = () => {
-    if(myPetStart.hungerStart > 0){
+    if(myPetStart.hungerStart > 0 && myPetStart.hungerStart < 10){
     myPetStart.hungerStart -= 1;
     hungerStat.textContent = "Hunger: " + myPetStart.hungerStart;
     }
 }
 feedBtn.addEventListener('click', decreaseHunger);
 
-// lightBtn.addEventListener('click', decreaseSleepy());
-// function decreaseSleepy(){
-//     myPetStart.sleepinessStart -= 1;
-//     sleepinessStat.textContent = myPetStart.sleepinessStart;
-// }
 
-// playBtn.addEventListener('click', decreaseBoredom());
-// function decreaseBoredom(){
-//     myPetStart.boredomStart -= 1;
-//     boredomStat.textContent = myPetStart.boredomStart;
-// }
+const decreaseSleepy = () => {
+    if(myPetStart.sleepinessStart > 0 && myPetStart.sleepinessStart < 10){
+    myPetStart.sleepinessStart -= 1;
+    sleepinessStat.textContent = "Sleepiness: " + myPetStart.sleepinessStart;
+    }
+}
+lightBtn.addEventListener('click', decreaseSleepy);
 
+
+const decreaseBoredom = () => {
+    if(myPetStart.boredomStart > 0 && myPetStart.boredomStart < 10){
+    myPetStart.boredomStart -= 1;
+    boredomStat.textContent = "Boredom: " + myPetStart.boredomStart;
+    }
+}
+playBtn.addEventListener('click', decreaseBoredom);
 
 // const hungerIncrease = setInterval( function () {
 //     increaseHunger(); {
