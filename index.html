@@ -6,32 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
 </head>
 
 <body>
-    <h1 id="heading">Tamagotchi Game</h1>
+    <h1 id="heading">TamaGucci Game</h1>
     
     <section id="pet-status">
-            <div id="hunger">
+            <div id="hunger-stat">
                 <p>Hunger:</p>
             </div>
 
-            <div id="Sleepiness">
+            <div id="sleepiness-stat">
                 <p>Sleepiness:</p>
             </div>
 
-            <div id="boredom">
+            <div id="boredom-stat">
                 <p>Boredom:</p>
             </div>
 
-            <div id="age">
+            <div id="age-stat">
                 <p>Age:</p>
             </div>
     </section>
-    <img src="agumon.png" alt="A photo of my Tamagotchi." id="pet-picture">
+    <img src="agumon.png" alt="A photo of my TamaGucci." id="pet-picture">
     <br>
     <br>
+
+    <input type="text" id="input" placeholder="Enter name here"/>
+    <button id="name-btn">Submit</button>
+    <h3 id="message"></h3>
 
 <br>
 
