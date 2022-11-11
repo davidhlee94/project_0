@@ -25,9 +25,7 @@ nameBtn.addEventListener('click', () => {
 
 
 
-
 //Start game
-
 const myPetStart = {
     hungerStart: 1,
     sleepinessStart: 1,
@@ -35,6 +33,8 @@ const myPetStart = {
     ageStart: 1
 }
 
+const intervalInscreaseStats = setInterval(increaseStats, 1000)
+//Incrementing the stats every second.
 function increaseStats() {
     if (myPetStart.hungerStart < 10 || myPetStart.sleepinessStart < 10 || myPetStart.boredomStart < 10 || myPetStart.ageStart < 10){
     myPetStart.hungerStart += 1;
@@ -45,10 +45,35 @@ function increaseStats() {
     sleepinessStat.textContent = "Sleepiness: " + myPetStart.sleepinessStart;
     boredomStat.textContent = "Boredom: " + myPetStart.boredomStart;
     ageStat.textContent = "Age: " + myPetStart.ageStart;
-    } else alert("You killed your TamaGucci.")
+    } else {
+        alert("You killed your TamaGucci. RIP.");
+        clearInterval(intervalInscreaseStats);
+    }
 }
-setInterval(increaseStats, 1000)
 
+
+
+
+
+const decreaseHunger = () => {
+    if(myPetStart.hungerStart > 0){
+    myPetStart.hungerStart -= 1;
+    hungerStat.textContent = "Hunger: " + myPetStart.hungerStart;
+    }
+}
+feedBtn.addEventListener('click', decreaseHunger);
+
+// lightBtn.addEventListener('click', decreaseSleepy());
+// function decreaseSleepy(){
+//     myPetStart.sleepinessStart -= 1;
+//     sleepinessStat.textContent = myPetStart.sleepinessStart;
+// }
+
+// playBtn.addEventListener('click', decreaseBoredom());
+// function decreaseBoredom(){
+//     myPetStart.boredomStart -= 1;
+//     boredomStat.textContent = myPetStart.boredomStart;
+// }
 
 
 // const hungerIncrease = setInterval( function () {
