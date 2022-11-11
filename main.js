@@ -1,10 +1,10 @@
 
 
-//Constants for the status
-const hungerStat = document.querySelector('#hunger-stat')
-const sleepinessStat = document.querySelector('#sleepiness-stat')
-const boredomeStat = document.querySelector('#boredome-stat')
-const ageStat = document.querySelector('#age-stat')
+//Constants for the stats
+const hungerStat = document.querySelector('#hunger')
+const sleepinessStat = document.querySelector('#sleepiness')
+const boredomStat = document.querySelector('#boredom')
+const ageStat = document.querySelector('#age')
 
 
 //Constants for buttons
@@ -24,20 +24,40 @@ nameBtn.addEventListener('click', () => {
 });
 
 
+
+
 //Start game
-const hungerStart = 10;
-const sleepinessStart = 10;
-const boredomeStart = 10;
-const ageStart = 1
 
-
-
-
-
-//TamaGucci function
-function tamagucci(){
-    this.hunger = hungerStart;
-    this.sleepiness = sleepinessStart;
-    this.boredome = boredomeStart;
-    this.age = ageStart;
+const myPetStart = {
+    hungerStart: 1,
+    sleepinessStart: 1,
+    boredomStart: 1,
+    ageStart: 1
 }
+
+function increaseStats() {
+    if (myPetStart.hungerStart < 10 || myPetStart.sleepinessStart < 10 || myPetStart.boredomStart < 10 || myPetStart.ageStart < 10){
+    myPetStart.hungerStart += 1;
+    myPetStart.sleepinessStart += 1;
+    myPetStart.boredomStart += 1;
+    myPetStart.ageStart += 1;
+    hungerStat.textContent = "Hunger: " + myPetStart.hungerStart;
+    sleepinessStat.textContent = "Sleepiness: " + myPetStart.sleepinessStart;
+    boredomStat.textContent = "Boredom: " + myPetStart.boredomStart;
+    ageStat.textContent = "Age: " + myPetStart.ageStart;
+    } else alert("You killed your TamaGucci.")
+}
+setInterval(increaseStats, 1000)
+
+
+
+// const hungerIncrease = setInterval( function () {
+//     increaseHunger(); {
+//         if(hungerStart < 10){
+//             hungerStart++;
+//             myPetStart.hungerStat.innerText = hungerStart;
+//         } else alert("Your TamaGucci died from hunger.")
+//     }
+// }, 5000);
+
+
