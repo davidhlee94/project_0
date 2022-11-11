@@ -33,10 +33,10 @@ const myPetStart = {
     ageStart: 1
 }
 
-const intervalInscreaseStats = setInterval(increaseStats, 1000)
+const intervalInscreaseStats = setInterval(increaseStats, 500)
 //Incrementing the stats every second.
 function increaseStats() {
-    if (myPetStart.hungerStart < 10 || myPetStart.sleepinessStart < 10 || myPetStart.boredomStart < 10 || myPetStart.ageStart < 10){
+    if (myPetStart.hungerStart < 10 || myPetStart.sleepinessStart < 10 || myPetStart.boredomStart < 10){
     myPetStart.hungerStart += 1;
     myPetStart.sleepinessStart += 1;
     myPetStart.boredomStart += 1;
@@ -45,16 +45,13 @@ function increaseStats() {
     sleepinessStat.textContent = "Sleepiness: " + myPetStart.sleepinessStart;
     boredomStat.textContent = "Boredom: " + myPetStart.boredomStart;
     ageStat.textContent = "Age: " + myPetStart.ageStart;
-    } else  
-    // (myPetStart.hungerStart === 10 || myPetStart.sleepinessStart === 10 ||myPetStart.boredomStart === 10)
-    {
+        if (myPetStart.hungerStart === 10 || myPetStart.sleepinessStart === 10 || myPetStart.boredomStart === 10
+        ){
             alert("You killed your TamaGucci. RIP.");
             clearInterval(intervalInscreaseStats);
 }
+}
 };
-
-
-
 
 
 
