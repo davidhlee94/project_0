@@ -12,12 +12,20 @@
     <script src="main.js" defer></script>
 </head>
 
+<h1 id="heading">
+    <span style="color:#0a6a56">Tama</span><span style="color:#a82b11">Gucci</span>
+</h1>
 <body>
-    <h1 id="heading">
-        <span style="color:#0a6a56">Tama</span><span style="color:#a82b11">Gucci</span>
-    </h1>
     
-    <section id="petStatus">
+    
+    <div id="content">
+        <div id="column1">
+            <img src="agumon.png" alt="A photo of my TamaGucci." id="pet-picture">
+            <h3 id="message"></h3>
+            <h5>Please keep my stats below 10!
+            <br> If any stat hits 10, I'll die 😢</h5>
+        </div>
+        <section id="column2">
             <div id="hungerStat">
                 <p id="hunger" class="text">Hunger:</p><button class="feed">Feed me</button>
             </div>
@@ -31,15 +39,12 @@
                 <p id="boredom" class="text">Boredom:</p>
                 <button class="play">Play with me</button>
         </div>
-
+    
             <div id="ageStat">
                 <p id="age">Age:</p>
             </div>
-    </section>
-    <img src="agumon.png" alt="A photo of my TamaGucci." id="pet-picture">
-    <!-- <input type="text" id="input" placeholder="Enter name here"/>
-    <button id="name-btn">Submit</button> -->
-    <h3 id="message"></h3>
-<br>
+        </section>
+        </div>
+
 </body>
 </html>

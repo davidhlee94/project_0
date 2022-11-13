@@ -73,7 +73,7 @@ const myPetStart = {
     ageStart: 1
 }
 
-const intervalInscreaseStats = setInterval(increaseStats, 2000)
+const intervalInscreaseStats = setInterval(increaseStats, 3000)
 //Incrementing the stats every second.
 function increaseStats() {
     if (myPetStart.hungerStart < 10 || myPetStart.sleepinessStart < 10 || myPetStart.boredomStart < 10){
